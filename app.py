@@ -14,7 +14,6 @@ e_gen = EpithetGenerator()
 
 @app.route('/')
 def index():
-    dict_ = {"epithets": []}
     random_epithet = e_gen.get_epithets(1)
     dict_ = {"epithets": random_epithet}
     return jsonify(dict_)
@@ -22,5 +21,12 @@ def index():
 
 @app.route('/vocabulary')
 def vocabulary():
-    dict_ = {"vocabulary": {}}
+    dict_ = {"vocabulary": e_gen.vocab}
+    return jsonify(dict_)
+
+
+@app.route('/epithets/<qty>')
+def epithets(qty):
+    epithets = e_gen.get_epithets(int(qty))
+    dict_ = {"epithets": epithets}
     return jsonify(dict_)

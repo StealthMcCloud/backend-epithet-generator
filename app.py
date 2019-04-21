@@ -1,16 +1,26 @@
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify
 from dotenv import load_dotenv
+from .helpers import Vocabulary, EpithetGenerator
 
 import os
 
-load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
-
 app = Flask(__name__)
+load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
+FLASK_APP = os.environ.get("FLASK_APP")
+FLASK_ENV = os.environ.get("FLASK_ENV")
+
+e_gen = EpithetGenerator()
+
 
 @app.route('/')
-def generate_epithets():
-    return jsonify({"epithets": []})
+def index():
+    dict_ = {"epithets": []}
+    random_epithet = e_gen.get_epithets(1)
+    dict_ = {"epithets": random_epithet}
+    return jsonify(dict_)
+
 
 @app.route('/vocabulary')
 def vocabulary():
-    return jsonify({"vocabulary": {}})
+    dict_ = {"vocabulary": {}}
+    return jsonify(dict_)

@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from .helpers import Vocabulary, EpithetGenerator
 
 import os
+import random
 
 app = Flask(__name__)
 load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
@@ -30,3 +31,11 @@ def epithets(qty):
     epithets = e_gen.get_epithets(int(qty))
     dict_ = {"epithets": epithets}
     return jsonify(dict_)
+
+
+@app.route('/epithets/random')
+def random_epithets():
+    epithets = e_gen.get_random_epithets()
+    dict_ = {"epithets": epithets}
+    return jsonify(dict_)
+    

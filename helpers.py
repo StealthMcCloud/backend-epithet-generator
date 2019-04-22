@@ -45,3 +45,11 @@ class EpithetGenerator:
 
         result = [''] * qty
         return [self.get_random_words() for item in result]
+
+
+    def get_random_epithets(self):
+        '''
+        returns a random amount of epithets.
+        '''
+        result = [''] * random.choice(range(10))
+        return [self.get_random_words() for item in result]

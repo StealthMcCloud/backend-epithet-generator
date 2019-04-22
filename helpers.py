@@ -51,5 +51,5 @@ class EpithetGenerator:
         '''
         returns a random amount of epithets.
         '''
-        result = [''] * random.choice(range(10))
+        result = [''] * random.choice(range(1, 25))
         return [self.get_random_words() for item in result]

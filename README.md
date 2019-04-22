@@ -1,17 +1,11 @@
 # Epithet Generator
 
-Create a Flask API to serve random epithets from the [Shakespeare Insult Kit](http://www.pangloss.com/seidel/shake_rule.html).
-Each sprint is an assignment with its own deliverables. Please create a pull request to the appropriate branch to submit
-assignments.
+This is a  basic flask Epithet Generator app.  It has multiple routes to input to get different results.  Based on the route you pass in it will provide a different result to the 4 different routes.
 
 ## Instructions
 
-Sprint|Description
----|---
-[a](https://github.com/KenzieAcademy/backend-epithet-generator/blob/master/instructions/sprint_a.md)|minimal flask applications
-[b](https://github.com/KenzieAcademy/backend-epithet-generator/blob/sprint-b/instructions/sprint_b.md) |unit testing
-[c](https://github.com/KenzieAcademy/backend-epithet-generator/blob/sprint-c/instructions/sprint_c.md) |integration testing
+By passing in just the basic local host 5000 route it will return a random epithet to view on the page in jsonified form.  By passing /vocabulary it will return all the different words used by the program that is organized by three columns.  By passing in /epithets/(enter quantity here) it will return a random amount of epithets based of the actual quantity entered.  The final rout of /epithets/random will return a random amount of epithets between 1 and 25 epithets.
 
 ------------------------------------------------------
 
-This is the basic introduction to flask and how to set up a flask server.  This utilizes the flask, dotenv, and os libraries to run the server.
+This is the basic introduction to a flask project.  This utilizes the flask, dotenv, and os libraries to run the server.

@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from dotenv import load_dotenv
-from .helpers import Vocabulary, EpithetGenerator
+from helpers import Vocabulary, EpithetGenerator
 
 import os
 import random
